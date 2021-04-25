@@ -2,5 +2,6 @@
 skip_core_tasks = true
 
 [tasks.run]
+toolchain = "nightly"
 command = "cargo"
-args = ["+nightly", "run", "--features", "bevy/dynamic"]
+args = ["run", "--features", "bevy/dynamic"]
