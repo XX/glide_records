@@ -19,6 +19,10 @@ use bevy::{
     DefaultPlugins,
 };
 
+use crate::diagnostic::DiagnosticPlugin;
+
+mod diagnostic;
+
 struct Person;
 
 struct Name(String);
@@ -53,6 +57,7 @@ fn main() {
     App::build()
         .insert_resource(Msaa { samples: 4 })
         .add_plugins(DefaultPlugins)
+        .add_plugin(DiagnosticPlugin)
         .add_plugin(HelloPlugin)
         .add_startup_system(setup.system())
         .run();
