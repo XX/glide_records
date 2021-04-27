@@ -2,6 +2,7 @@ use bevy::{
     app::App,
     asset::Assets,
     ecs::system::{Commands, IntoSystem, ResMut},
+    input::system::exit_on_esc_system,
     pbr::{LightBundle, PbrBundle},
     prelude::StandardMaterial,
     render::{
@@ -27,6 +28,7 @@ fn main() {
         .add_plugin(HelloPlugin)
         .add_plugin(PanOrbitCameraPlugin)
         .add_startup_system(setup.system())
+        .add_system(exit_on_esc_system.system())
         .run();
 }
 
